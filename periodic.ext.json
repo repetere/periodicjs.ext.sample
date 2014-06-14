@@ -1,0 +1,8 @@
+{
+	"name": "periodicjs.ext.sample",
+	"periodicCompatibility":"0.0.2",
+	"periodicDependencies":[{
+		"extname":"periodicjs.ext.example",
+		"version":"0.0.2"
+	}]
+}
