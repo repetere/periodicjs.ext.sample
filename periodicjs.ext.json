@@ -1,8 +1,34 @@
 {
 	"name": "periodicjs.ext.sample",
 	"periodicCompatibility":"0.0.2",
-	"periodicDependencies":[{
-		"extname":"periodicjs.ext.example",
-		"version":"0.0.2"
-	}]
+	"periodicDependencies": [
+		{
+			"extname": "periodicjs.ext.admin",
+			"version": "0.0.3"
+		},
+		{
+			"extname": "periodicjs.ext.login",
+			"version": "0.0.2"
+		}
+    ],
+	"periodicjs.ext.admin": {
+		"menu": {
+			"Content": [
+				{
+					"html": "<a href=\"/p-admin/example\">example settings</a>"
+				},
+				{
+					"html": "<a href=\"/p-admin/example/link2\">example conf</a>"
+				}
+				],
+				"Extensions": [
+				{
+					"html": "<a href=\"/p-admin/example/ext\">example ext settings</a>"
+				},
+				{
+					"html": "<a href=\"/p-admin/example/ext/link2\">example ext conf</a>"
+				}
+			]
+		}
+	}
 }
