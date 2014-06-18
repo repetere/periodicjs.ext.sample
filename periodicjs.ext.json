@@ -13,22 +13,15 @@
     ],
 	"periodicjs.ext.admin": {
 		"menu": {
-			"Content": [
-				{
-					"html": "<a href=\"/p-admin/example\">example settings</a>"
-				},
-				{
-					"html": "<a href=\"/p-admin/example/link2\">example conf</a>"
+			"Content": {
+				"example-settings" : "<a href=\"/p-admin/example\">example settings</a>",
+				"example-conf": "<a href=\"/p-admin/example/link2\">example conf</a>"
 				}
-				],
-				"Extensions": [
-				{
-					"html": "<a href=\"/p-admin/example/ext\">example ext settings</a>"
-				},
-				{
-					"html": "<a href=\"/p-admin/example/ext/link2\">example ext conf</a>"
-				}
-			]
+			,
+			"Extensions": {
+				"ext-ex-set": "<a href=\"/p-admin/example/ext\">example ext settings</a>",
+				"ext-ex-conf": "<a href=\"/p-admin/example/ext/link2\">example ext conf</a>"
+			}
 		}
 	}
 }
