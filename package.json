@@ -1,7 +1,7 @@
 {
   "name": "periodicjs.ext.sample",
   "description": "example extensions for periodicjs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "engines": {
     "node": ">=0.10.x"
@@ -17,10 +17,12 @@
     "postuninstall": "node uninstall.js"
   },
   "dependencies": {
-    "util-extend": "1.0.1"
+    "async": "0.9.0",
+    "fs-extra": "0.11.0",
+    "periodicjs.core.extensions": "1.0.4"
   },
   "peerDependencies": {
-    "periodicjs.ext.example": "^1.1.1"
+    "periodicjs.ext.example": "1.1.2"
   },
   "devDependencies": {},
   "keywords": [
