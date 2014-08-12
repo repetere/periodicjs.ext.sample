@@ -1,5 +1,4 @@
 {
-	"name": "periodicjs.ext.sample",
 	"periodicCompatibility":"1.0.0",
 	"periodicDependencies": [
 		{
