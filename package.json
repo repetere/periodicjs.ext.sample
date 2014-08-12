@@ -1,7 +1,7 @@
 {
   "name": "periodicjs.ext.sample",
   "description": "example extensions for periodicjs",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "main": "index.js",
   "engines": {
     "node": ">=0.10.x"
@@ -20,7 +20,7 @@
     "util-extend": "1.0.1"
   },
   "peerDependencies": {
-    "periodicjs.ext.example": "~1.0.4"
+    "periodicjs.ext.example": "~1.1.0"
   },
   "devDependencies": {},
   "keywords": [
