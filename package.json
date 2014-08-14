@@ -1,7 +1,7 @@
 {
   "name": "periodicjs.ext.sample",
   "description": "example extensions for periodicjs",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "index.js",
   "engines": {
     "node": ">=0.10.x"
@@ -22,7 +22,7 @@
     "periodicjs.core.extensions": "~1.2.2"
   },
   "peerDependencies": {
-    "periodicjs.ext.example": "~1.2.2"
+    "periodicjs.ext.example": "~1.2.3"
   },
   "devDependencies": {},
   "keywords": [

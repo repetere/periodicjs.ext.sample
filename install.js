@@ -26,6 +26,6 @@ ExtensionCore.install({
 			throw new Error(err);
 		}
 		else{
-			console.log(status.message);
+			console.log(status);
 		}
 });
