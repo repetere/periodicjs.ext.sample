@@ -13,23 +13,17 @@ var path = require('path'),
 		extensionFilePath: extensionFilePath 
 	});
 
-async.series({
-	removeExtPublicDirectory: function(callback){
-		Extension.removePublicFiles({
-			publicdir : extpublicdir
-		},callback);
+ExtensionCore.uninstall({
+		extname:extname,
+		extdir:extdir,
+		extpublicdir:extpublicdir,
+		extensionFileJson:extensionFileJson
 	},
-	removeExtFromPeriodicConf: function(callback){
-		Extension.removeExtFromConf({
-			extname : extname,
-			currentExtensionsConfJson : extensionFileJson
-		},callback);
-	}
-},function(err,results){
-	if(err){
-		throw new Error(err);
-	}
-	else{
-		console.log(results);
-	}
+	function(err,status){
+		if(err){
+			throw new Error(err);
+		}
+		else{
+			console.log(status);
+		}
 });

@@ -1,44 +1,31 @@
 'use strict';
 
 var path = require('path'),
-	ExtensionCore = require('periodicjs.core.extensions'),
-	Extension = new ExtensionCore({
-		extensionFilePath: path.resolve(__dirname,'../../content/extensions/extensions.json') 
-	}),
 	fs = require('fs-extra'),
 	async = require('async'),
+	Extensions = require('periodicjs.core.extensions'),
+	ExtensionCore = new Extensions({
+		extensionFilePath: path.resolve(__dirname,'../../content/extensions/extensions.json') 
+	}),
 	packagejsonFileJSON = fs.readJSONSync(path.resolve('./package.json')),
-	extname = packagejsonFileJSON.name;
+	extname = packagejsonFileJSON.name,
+	extdir = path.resolve( './public'),
+	extpublicdir = path.resolve(__dirname,'../../public/extensions/', extname),
+	extpackfile = path.resolve('./package.json'),
+	extconffile = path.resolve('./periodicjs.ext.json');
 
-async.series({
-	installExtPublicDirectory: function(callback){
-		Extension.installPublicDirectory({
-			extname: extname,
-			extdir : path.resolve( './public'),
-			extpublicdir : path.resolve(__dirname,'../../public/extensions/', extname)
-		},callback);
+ExtensionCore.install({
+		extname:extname,
+		extdir:extdir,
+		extpublicdir:extpublicdir,
+		extpackfile:extpackfile,
+		extconffile:extconffile
 	},
-	installExtSetPeriodicConf: function(callback){
-		Extension.setExtConf({
-			extname:extname,
-			extpackfile:path.resolve('./package.json'),
-			extconffile:path.resolve('./periodicjs.ext.json')
-		},callback);
-	}
-},function(err,results){
-	if(err){
-		throw new Error(err);
-	}
-	else{
-		console.log(results.installExtPublicDirectory);
-		Extension.updateExtConfFile(results.installExtSetPeriodicConf,
-			function(err,status){
-				if(err){
-					throw new Error(err);
-				}
-				else{
-					console.log(status);
-				}
-			});
-	}
+	function(err,status){
+		if(err){
+			throw new Error(err);
+		}
+		else{
+			console.log(status.message);
+		}
 });
