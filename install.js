@@ -1,24 +1,14 @@
 'use strict';
 
-var path = require('path'),
-	fs = require('fs-extra'),
-	Extensions = require('periodicjs.core.extensions'),
+var Extensions = require('periodicjs.core.extensions'),
 	ExtensionCore = new Extensions({
-		extensionFilePath: path.resolve(__dirname,'../../content/extensions/extensions.json') 
-	}),
-	packagejsonFileJSON = fs.readJSONSync(path.resolve('./package.json')),
-	extname = packagejsonFileJSON.name,
-	extdir = path.resolve( './public'),
-	extpublicdir = path.resolve(__dirname,'../../public/extensions/', extname),
-	extpackfile = path.resolve('./package.json'),
-	extconffile = path.resolve('./periodicjs.ext.json');
+		dirname: __dirname 
+	});
 
 ExtensionCore.install({
-		extname:extname,
-		extdir:extdir,
-		extpublicdir:extpublicdir,
-		extpackfile:extpackfile,
-		extconffile:extconffile
+		// enabled:false,
+		// movebefore:'periodicjs.ext.user_access_control'
+		// installatindex: 0
 	},
 	function(err,status){
 		if(err){
@@ -28,3 +18,5 @@ ExtensionCore.install({
 			console.log(status);
 		}
 });
+// $ npm install --skip_ext_conf
+// $ npm intsall --enable_ext
