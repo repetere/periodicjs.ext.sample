@@ -1,13 +1,13 @@
 {
-	"periodicCompatibility":"3.0.0",
+	"periodicCompatibility":"3.1.1",
 	"periodicDependencies": [
 		{
 			"extname": "periodicjs.ext.admin",
-			"version": "1.0.0"
+			"version": "1.1.1"
 		},
 		{
 			"extname": "periodicjs.ext.login",
-			"version": "3.0.0"
+			"version": "3.1.1"
 		}
     ],
 	"periodicjs.ext.admin": {
