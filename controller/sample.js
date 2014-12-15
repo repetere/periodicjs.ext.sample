@@ -1,21 +1,39 @@
 'use strict';
 
-var path = require('path'),
-	AppController = require(path.join(process.cwd(),'app/controller/application')),
-	applicationController,
+var// path = require('path'),
+	ControllerHelper = require('periodicjs.core.controller'),
+	CoreController,
 	appSettings,
 	mongoose,
 	logger;
 
 var examplefunction = function(req, res) {
-	res.send('extention works');
+	CoreController.getPluginViewDefaultTemplate({
+			viewname: 'sample/index',
+			themefileext: appSettings.templatefileextension,
+			extname: 'periodicjs.ext.sample'
+		},
+		function (err, templatepath) {
+			CoreController.handleDocumentQueryRender({
+				res: res,
+				req: req,
+				renderView: templatepath,
+				responseData: {
+					pagedata: {
+						title: 'Sample Extension',
+					},
+					user: req.user
+				}
+			});
+		}
+	);
 };
 
 var controller = function(resources){
 	logger = resources.logger;
 	mongoose = resources.mongoose;
 	appSettings = resources.settings;
-	applicationController = new AppController(resources);
+	CoreController = new ControllerHelper(resources);
 
 	return{
 		examplefunction:examplefunction
