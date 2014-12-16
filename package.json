@@ -17,7 +17,9 @@
     "postuninstall": "node uninstall.js"
   },
   "dependencies": {
-    "async": "0.9.0",
+    "bindie": "latest",
+    "formie": "latest",
+    "forbject": "latest",
     "fs-extra": "0.12.0",
     "periodicjs.core.extensions": "~3.1.1"
   },

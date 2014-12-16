@@ -1,13 +1,13 @@
 'use strict';
 
-var// path = require('path'),
+var // path = require('path'),
 	ControllerHelper = require('periodicjs.core.controller'),
 	CoreController,
 	appSettings,
 	mongoose,
 	logger;
 
-var examplefunction = function(req, res) {
+var examplefunction = function (req, res) {
 	CoreController.getPluginViewDefaultTemplate({
 			viewname: 'sample/index',
 			themefileext: appSettings.templatefileextension,
@@ -29,14 +29,15 @@ var examplefunction = function(req, res) {
 	);
 };
 
-var controller = function(resources){
+
+var controller = function (resources) {
 	logger = resources.logger;
 	mongoose = resources.mongoose;
 	appSettings = resources.settings;
 	CoreController = new ControllerHelper(resources);
 
-	return{
-		examplefunction:examplefunction
+	return {
+		examplefunction: examplefunction
 	};
 };
 

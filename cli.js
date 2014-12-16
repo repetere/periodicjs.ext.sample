@@ -11,20 +11,20 @@ var path = require('path'),
 	appSettings,
 	applicationController;
 
-var extscript = function(resources){
+var extscript = function (resources) {
 	logger = resources.logger;
 	mongoose = resources.mongoose;
 	appSettings = resources.settings;
 	applicationController = new appController(resources);
 	// Post = mongoose.model('Post');
 	// Collection = mongoose.model('Collection');
-	var cli = function(argv){
-		console.log("sample extension",argv);
+	var cli = function (argv) {
+		console.log("sample extension", argv);
 		process.exit(0);
 	};
 
-	return{
-		cli:cli
+	return {
+		cli: cli
 	}
 };
 
