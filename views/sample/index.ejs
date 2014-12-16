@@ -23,7 +23,8 @@
       <!-- <h1>formie Test</h1> -->
       <div class="pull-left width50">
 
-        <form id="formie-test" name="formie-test" action="" class="formie" method="get">
+        <form id="formie-test" name="formie-test" action="/p-admin/user/new" class="formie" method="post">
+					<input type="hidden" name="_csrf" id="_csrf" value=<%= locals.token %> >
           <h2>Form</h2>
           <article class="right-border">
             <section>
@@ -69,7 +70,37 @@
             <section>
               <label>Profile</label>
               <div class="label-data-container">
-                <textarea class="label-data-style" name="profile" id="profile"></textarea>
+                <textarea class="label-data-style" name="description" id="description"></textarea>
+              </div>
+            </section>
+            <section>
+              <input type="submit" name="testformiesubmit" value="testformie" />
+            </section>
+          </article>
+
+        </form>
+
+
+        <form id="upload-formie-test" name="upload-formie-test" action="/mediaasset/new" class="formie" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="_csrf" id="_csrf" value=<%= locals.token %> >
+          <h2>Upload media test</h2>
+          <article class="right-border">
+            <section>
+              <label for="title">title</label>
+              <div class="label-data-container">
+                <input class="label-data-style noFormSubmit" type="text" value="" name="title" id="title" />
+              </div>
+            </section>
+            <section>
+              <label for="image">Image</label>
+              <div class="label-data-container">
+                <input type="file" id="image" class="label-data-style formie-file autoFormSubmit" name="image" multiple="multiple">
+              </div>
+            </section>
+            <section>
+              <label>description</label>
+              <div class="label-data-container">
+                <textarea class="label-data-style" name="description" id="description"></textarea>
               </div>
             </section>
             <section>
