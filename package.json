@@ -1,7 +1,7 @@
 {
   "name": "periodicjs.ext.sample",
   "description": "example extensions for periodicjs",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "main": "index.js",
   "engines": {
     "node": ">=0.10.x"
@@ -21,7 +21,7 @@
     "formie": "latest",
     "forbject": "latest",
     "fs-extra": "0.12.0",
-    "periodicjs.core.extensions": "~3.1.1"
+    "periodicjs.core.extensions": "~4.0.2"
   },
   "devDependencies": {
     "browserify": "~6.3.2",
